@@ -203,7 +203,7 @@
 											offsetLeft : number -> offset from left. Default: 0
 	 * @returns {Object=} options	The options
 	 */
-	$.options = function(options) {
+	$.scrollSpyOptions = function(options) {
 		if (!options instanceof Array) {
 			// getter
 			return offset;
