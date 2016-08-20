@@ -31,6 +31,15 @@
 		console.log('exit:', $(this).attr('id'));
 	});
 
+	var i = 0;
+
+	$('#tile-0').on('scrollSpy:exit', function() {
+		if (i >= 3) {
+			$('.tile').stopScrollSpy();
+		}
+		++i;
+	});
+
 	$('.tile').scrollSpy();
 </script>
 </body>

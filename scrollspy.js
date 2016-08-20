@@ -195,6 +195,28 @@
 	};
 
 	/**
+	 * Disable ScrollSpy using a selector
+	 * @param {jQuery|string} selector  The elements collection, or a selector
+	 * @returns {jQuery}
+	 */
+	$.stopScrollSpy = function(selector, options) {
+		selector = $(selector);
+		selector.each(function(i, element) {
+			var pos = elements.indexOf(element);
+			elements.splice(pos, 1);
+		});
+
+
+		if (!elements.length) {
+			jWindow.off('scroll');
+			jWindow.off('resize');
+			isSpying = false;
+		}
+
+		return selector;
+	};
+
+	/**
 	 * Listen for window resize events
 	 * @param {Object=} options						Optional. Set { throttle: number } to change throttling. Default: 100 ms
 	 * @returns {jQuery}		$(window)
@@ -220,6 +242,15 @@
 	 */
 	$.fn.scrollSpy = function(options) {
 		return $.scrollSpy($(this), options);
+	};
+
+	/**
+	 * Disabled ScrollSpy on a collection of elements
+	 * e.g. $('.scrollSpy').stopScrollSpy()
+	 * @returns {jQuery}
+	 */
+	$.fn.stopScrollSpy = function() {
+		return $.stopScrollSpy($(this));
 	};
 
 })(jQuery);
