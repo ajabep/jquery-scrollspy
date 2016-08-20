@@ -6,7 +6,7 @@ A jQuery plugin for detecting enter/exit of elements in the viewport when the us
 
 Added a couple new features:
 
- * Aug 2016 - stop to spy with the `stopScrollSyp` method, add the `options` method to get/set options
+ * Aug 2016 - stop to spy with the `stopScrollSpy` method, add the `options` method to get/set options
  * May 2014 - optional window offset, allows for things like floating navs
  * Feb 2014 - supports window resize
  * Nov 2013 - throttles scrollspy events so that event handles only fire every 100 milliseconds
