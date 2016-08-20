@@ -195,6 +195,30 @@
 	};
 
 	/**
+	 * Get or set options
+	 * @param {Object=} options	Optional.
+											offsetTop : number -> offset from top. Default: 0
+											offsetRight : number -> offset from right. Default: 0
+											offsetBottom : number -> offset from bottom. Default: 0
+											offsetLeft : number -> offset from left. Default: 0
+	 * @returns {Object=} options	The options
+	 */
+	$.options = function(options) {
+		if (!options instanceof Array) {
+			// getter
+			return offset;
+		}
+		// setter
+
+		offset.top = options.offsetTop || 0;
+		offset.right = options.offsetRight || 0;
+		offset.bottom = options.offsetBottom || 0;
+		offset.left = options.offsetLeft || 0;
+
+		return offset;
+	};
+
+	/**
 	 * Disable ScrollSpy using a selector
 	 * @param {jQuery|string} selector  The elements collection, or a selector
 	 * @returns {jQuery}
